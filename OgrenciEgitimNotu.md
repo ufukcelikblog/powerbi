@@ -183,12 +183,7 @@ CALCULATE(
 
 **Ölçü: Satış Artışı %**
 ```DAX
-Satis_Artisi_Yuzde = 
-DIVIDE(
-    [Toplam_Satis] - [Onceki_Ay_Satis], 
-    [Onceki_Ay_Satis], 
-    0
-)
+Satis_Artisi_Yuzde = DIVIDE([Toplam_Satis] - [Onceki_Ay_Satis], [Onceki_Ay_Satis], 0)
 ```
 
 **Format ayarı:**
@@ -426,17 +421,9 @@ Style: Dropdown
 
 **DAX Formülleri:**
 ```DAX
-En_Iyi_Magaza = 
-CALCULATE(
-    SELECTEDVALUE(Magazalar[Magaza_Adi]),
-    TOPN(1, ALL(Magazalar), [Toplam_Satis], DESC)
-)
+En_Iyi_Magaza = CALCULATE(SELECTEDVALUE(Magazalar[Magaza_Adi]), TOPN(1, ALL(Magazalar), [Toplam_Satis], DESC))
 
-Ortalama_Magaza_Satis = 
-AVERAGEX(
-    VALUES(Magazalar[Magaza_ID]),
-    [Toplam_Satis]
-)
+Ortalama_Magaza_Satis = AVERAGEX(VALUES(Magazalar[Magaza_ID]), [Toplam_Satis])
 
 Magaza_Sayisi = DISTINCTCOUNT(Magazalar[Magaza_ID])
 
@@ -501,10 +488,9 @@ Siparis_Per_Magaza = DIVIDE([Siparis_Sayisi], [Magaza_Sayisi])
 
 **Top 5 Mağaza Filtresi:**
 ```DAX
-Top_5_Magaza = 
-IF(RANKX(ALL(Magazalar[Magaza_Adi]), [Toplam_Satis], , DESC) <= 5, 1, 0)
+Top_5_Magaza = IF(RANKX(ALL(Magazalar[Magaza_Adi]), [Toplam_Satis], , DESC) <= 5, 1, 0)
 ```
->Bu ölçüyü Visual level filter olarak kullanın (value = 1)
+> Bu ölçüyü Visual level filter olarak kullanın (value = 1)
 
 ---
 
@@ -525,13 +511,7 @@ IF(RANKX(ALL(Magazalar[Magaza_Adi]), [Toplam_Satis], , DESC) <= 5, 1, 0)
 
 3. **Top 10 Ürünler (Bar Chart):**
    ```DAX
-   Top_10_Urun = 
-   IF(
-       RANKX(ALL(Urunler[Urun_Adi]), 
-       [Toplam_Satis]) <= 10,
-       [Toplam_Satis],
-       BLANK()
-   )
+   Top_10_Urun = IF(RANKX(ALL(Urunler[Urun_Adi]), [Toplam_Satis]) <= 10, [Toplam_Satis], BLANK())
    ```
 
 ---
