@@ -28,21 +28,22 @@ Yaklaşık 90 dakika
 
 ## 📚 İçindekiler
 
-1. [Başlamadan Önce](#başlangıç)
-2. [Bölüm 1: Veri Yükleme](#bölüm-1)
-3. [Bölüm 2: Veri Modeli](#bölüm-2)
-4. [Bölüm 3: DAX Formülleri](#bölüm-3)
-5. [Bölüm 4: Pano Oluşturma](#bölüm-4)
-6. [Bölüm 5: Ürün Detay Analizi](#bölüm-5)
-7. [Bölüm 6: Müşteri Analizi](#bölüm-6)
-8. [Bölüm 7: İleri Özellikler](#bölüm-7)
-9. [Ödev](#ödev)
+1. [Başlamadan Önce](#baslangic)
+2. [Bölüm 1: Veri Yükleme](#bolum-1)
+3. [Bölüm 2: Veri Modeli](#bolum-2)
+4. [Bölüm 3: DAX Formülleri](#bolum-3)
+5. [Bölüm 4: Pano Oluşturma](#bolum-4)
+6. [Bölüm 5: Ürün Detay Analizi](#bolum-5)
+7. [Bölüm 6: Müşteri Analizi](#bolum-6)
+8. [Bölüm 7: İleri Özellikler](#bolum-7)
+9. [Ödev](#odev)
 10. [Sık Sorulan Sorular](#sss)
 11. [Ek Kaynaklar](#kaynaklar)
+12. [Ders İçin Ekstra İpucları](#ek-ipucu) 
 
 ---
 
-## 🚀 Başlamadan Önce {#başlangıç}
+## 🚀 <a id="baslangic"></a>Başlamadan Önce
 
 ### Power BI Desktop Nasıl İndirilir?
 
@@ -68,7 +69,7 @@ Yaklaşık 90 dakika
 
 ---
 
-## 📥 Bölüm 1: Veri Yükleme (10 dakika) {#bölüm-1}
+## 📥 <a id="bolum-1"></a>Bölüm 1: Veri Yükleme (10 dakika)
 
 ### Adım 1: Excel Dosyasını Yükleme
 
@@ -113,7 +114,7 @@ Sağ panelde **Alanlar** (Fields) bölümünde 4 tablo görünüyor mu?
 
 ---
 
-## 🔗 Bölüm 2: Veri Modeli Oluşturma (15 dakika) {#bölüm-2}
+## 🔗 <a id="bolum-2"></a>Bölüm 2: Veri Modeli Oluşturma (15 dakika)
 
 ### Veri Modeli Nedir?
 
@@ -265,7 +266,7 @@ Aynı işlemi **YilAy** için de yapın:
 
 ---
 
-## 📊 Bölüm 3: DAX Formülleri (20 dakika) {#bölüm-3}
+## 📊 <a id="bolum-3"></a>Bölüm 3: DAX Formülleri (20 dakika)
 
 ### DAX Nedir?
 
@@ -492,7 +493,7 @@ Bir Kart (Card) görselinde Toplam_Satis'i kullan, sayı görünüyor mu?
 
 ---
 
-## 🎨 Bölüm 4: Pano Oluşturma (25 dakika) {#bölüm-4}
+## 🎨 <a id="bolum-4"></a>Bölüm 4: Pano Oluşturma (25 dakika)
 
 ### Sayfa Hazırlığı
 
@@ -850,7 +851,7 @@ Panonuz şöyle görünmeli:
 4. Filtreleri temizleyin → Eski haline dönmeli
 
 ---
-## 🔍 Bölüm 5: Dashboard Sayfası 3 - Ürün Detay Analizi {#bölüm-5}
+## 🔍 <a id="bolum-5"></a>Bölüm 5: Dashboard Sayfası 3 - Ürün Detay Analizi
 
 ### Görseller:
 
@@ -877,7 +878,7 @@ Panonuz şöyle görünmeli:
    ```
 ---
 
-## 👥 Bölüm 6: Dashboard Sayfası 4 - Müşteri Analizi {#bölüm-6}
+## 👥 <a id="bolum-6"></a>Bölüm 6: Dashboard Sayfası 4 - Müşteri Analizi
 
 1. **Clustered Column Chart:** Yaş Grubu ve Üyelik Tipi
    - X-Axis: Musteriler[Yas_Grubu]
@@ -897,7 +898,7 @@ Panonuz şöyle görünmeli:
 
 ---
 
-## 🚀 Bölüm 7: İleri Özellikler (15 dakika) {#bölüm-7}
+## 🚀 <a id="bolum-7"></a>Bölüm 7: İleri Özellikler (15 dakika)
 
 ### Yeni Sayfa: Mağaza Analizi
 
@@ -1158,7 +1159,7 @@ Artık kar marjı düşük olan mağazalar kırmızı, yüksek olanlar yeşil g�
 
 ---
 
-## 📝 Ödev {#ödev}
+## 📝 <a id="odev"></a>Ödev
 
 ### Görev: Kendi Mağaza Analiz Sayfanızı Oluşturun
 
@@ -1207,7 +1208,7 @@ Artık kar marjı düşük olan mağazalar kırmızı, yüksek olanlar yeşil g�
 
 ---
 
-## ❓ Sık Sorulan Sorular {#sss}
+## ❓ <a id="sss"></a>Sık Sorulan Sorular
 
 ### S1: "DAX formülü hata veriyor, ne yapmalıyım?"
 
@@ -1310,7 +1311,7 @@ Bu adımı yaptıktan sonra grafik doğru sıralanacak!
 
 ---
 
-## 📚 Ek Kaynaklar {#kaynaklar}
+## 📚 <a id="kaynaklar"></a>Ek Kaynaklar
 
 ### Ücretsiz Eğitimler
 
@@ -1429,7 +1430,7 @@ Bu adımı yaptıktan sonra grafik doğru sıralanacak!
 
 ---
 
-## 🎓 Ders İçin Ekstra İpuçları
+## 🎓 <a id="ek-ipucu"></a>Ders İçin Ekstra İpuçları
 
 ### Mağaza Analiziyle İlgili Sorular:
 
