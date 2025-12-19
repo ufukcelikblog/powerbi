@@ -36,10 +36,10 @@ Yaklaşık 90 dakika
 6. [Bölüm 5: Ürün Detay Analizi](#bolum-5)
 7. [Bölüm 6: Müşteri Analizi](#bolum-6)
 8. [Bölüm 7: İleri Özellikler](#bolum-7)
-9. [Ödev](#odev)
-10. [Sık Sorulan Sorular](#sss)
-11. [Ek Kaynaklar](#kaynaklar)
-12. [Ders İçin Ekstra İpucları](#ek-ipucu) 
+9. [Ders İçin Ekstra İpucları](#ek-ipucu) 
+10. [Ödev](#odev)
+11. [Sık Sorulan Sorular](#sss)
+12. [Ek Kaynaklar](#kaynaklar)
 
 ---
 
@@ -1158,6 +1158,53 @@ Kural 3:
 Artık kar marjı düşük olan mağazalar kırmızı, yüksek olanlar yeşil görünecek!
 
 ---
+## 🎓 <a id="ek-ipucu"></a>Ders İçin Ekstra İpuçları
+
+### Mağaza Analiziyle İlgili Sorular:
+
+1. "Hangi mağazanın metrekare başına satışı en yüksek?" (Alan bilgisi eklerseniz)
+2. "İki mağaza arasındaki mesafe kaç km?" (Koordinatlardan hesaplanabilir)
+3. "Hangi şehirde 3. mağaza açmalıyız?"
+4. "Mağaza lokasyonu ile müşteri profili arasında ilişki var mı?"
+
+### Gelişmiş DAX - Mesafe Hesaplama:
+
+İki nokta arası mesafe (Haversine formülü):
+
+```DAX
+Mesafe_KM = 
+VAR Lat1 = RADIANS([Enlem1])
+VAR Lon1 = RADIANS([Boylam1])
+VAR Lat2 = RADIANS([Enlem2])
+VAR Lon2 = RADIANS([Boylam2])
+VAR dLat = Lat2 - Lat1
+VAR dLon = Lon2 - Lon1
+VAR a = 
+    SIN(dLat/2) * SIN(dLat/2) +
+    COS(Lat1) * COS(Lat2) *
+    SIN(dLon/2) * SIN(dLon/2)
+VAR c = 2 * ATAN2(SQRT(a), SQRT(1-a))
+VAR R = 6371 // Dünya yarıçapı (km)
+RETURN R * c
+```
+
+### Coğrafi Segmentasyon:
+
+Mağazaları bölgelere ayırma:
+
+```DAX
+Bolge_Kategori = 
+SWITCH(
+    TRUE(),
+    Magazalar[Sehir] IN {"İstanbul", "İzmir", "Bursa"}, "Batı",
+    Magazalar[Sehir] IN {"Ankara", "Konya"}, "İç Anadolu",
+    Magazalar[Sehir] IN {"Antalya"}, "Akdeniz",
+    Magazalar[Sehir] IN {"Adana", "Gaziantep"}, "Güneydoğu",
+    "Diğer"
+)
+```
+
+---
 
 ## 📝 <a id="odev"></a>Ödev
 
@@ -1427,54 +1474,6 @@ Bu adımı yaptıktan sonra grafik doğru sıralanacak!
 - [ ] Görseller performanslı (3 saniyeden hızlı)
 - [ ] Mobile layout düzenlendi
 - [ ] Dashboard yayınlandı (Power BI Service)
-
----
-
-## 🎓 <a id="ek-ipucu"></a>Ders İçin Ekstra İpuçları
-
-### Mağaza Analiziyle İlgili Sorular:
-
-1. "Hangi mağazanın metrekare başına satışı en yüksek?" (Alan bilgisi eklerseniz)
-2. "İki mağaza arasındaki mesafe kaç km?" (Koordinatlardan hesaplanabilir)
-3. "Hangi şehirde 3. mağaza açmalıyız?"
-4. "Mağaza lokasyonu ile müşteri profili arasında ilişki var mı?"
-
-### Gelişmiş DAX - Mesafe Hesaplama:
-
-İki nokta arası mesafe (Haversine formülü):
-
-```DAX
-Mesafe_KM = 
-VAR Lat1 = RADIANS([Enlem1])
-VAR Lon1 = RADIANS([Boylam1])
-VAR Lat2 = RADIANS([Enlem2])
-VAR Lon2 = RADIANS([Boylam2])
-VAR dLat = Lat2 - Lat1
-VAR dLon = Lon2 - Lon1
-VAR a = 
-    SIN(dLat/2) * SIN(dLat/2) +
-    COS(Lat1) * COS(Lat2) *
-    SIN(dLon/2) * SIN(dLon/2)
-VAR c = 2 * ATAN2(SQRT(a), SQRT(1-a))
-VAR R = 6371 // Dünya yarıçapı (km)
-RETURN R * c
-```
-
-### Coğrafi Segmentasyon:
-
-Mağazaları bölgelere ayırma:
-
-```DAX
-Bolge_Kategori = 
-SWITCH(
-    TRUE(),
-    Magazalar[Sehir] IN {"İstanbul", "İzmir", "Bursa"}, "Batı",
-    Magazalar[Sehir] IN {"Ankara", "Konya"}, "İç Anadolu",
-    Magazalar[Sehir] IN {"Antalya"}, "Akdeniz",
-    Magazalar[Sehir] IN {"Adana", "Gaziantep"}, "Güneydoğu",
-    "Diğer"
-)
-```
 
 ---
 
